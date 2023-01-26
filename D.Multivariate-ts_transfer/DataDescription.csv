@@ -1,0 +1,38 @@
+Problem,TrainSize,TestSize,NumDimensions,SeriesLength,NumClasses,Normalised,Padded,MissingValues,ClassCounts,Type,Loader Success,Detail Description(only loader success),,
+ArticularyWordRecognition,275,300,9,144,25,TRUE,FALSE,FALSE,11,Motion,1,Movement of the tongue and lips during speech,"12sensors(each provide X,Y,Z timeseries), but dataset includes just 9 ",200Hz
+AtrialFibrillation,15,15,2,640,3,FALSE,FALSE,FALSE,5,ECG,1,two-channel ECG,,128Hz
+BasicMotions,40,40,6,100,4,FALSE,FALSE,FALSE,10,HAR,1,"4 students 4 activities(walking, resting, running, badminton)",3D accelerometer and 3D gyroscope,10Hz
+CharacterTrajectories,1422,1436,3,182,20,FALSE,FALSE,FALSE,85,Motion,0,,,
+Cricket,108,72,6,1197,12,TRUE,FALSE,FALSE,9,HAR,1,"12 behaviors , each 10 repitition","accelerometer on wrist(X,Y,Z)",184Hz
+DuckDuckGeese,50,50,1345,270,5,FALSE,FALSE,FALSE,10,Audio,0,Classify species of Duck and Geese,,44100Hz
+EigenWorms,128,131,6,17984,5,FALSE,FALSE,FALSE,55,Motion,1,"record motion of worms on agar plate, ",,
+Epilepsy,137,138,3,206,4,FALSE,FALSE,FALSE,34,HAR,1,random interval of activity for series,,16Hz
+ERing,30,270,4,65,6,FALSE,FALSE,FALSE,5,HAR,1,detect hand and finger gesture from prototype eRing,electric field sensing,
+EthanolConcentration,261,263,3,1751,4,FALSE,FALSE,FALSE,65,Other,1,"raw spectra from water/ethanol, real whisky bottles",,
+FaceDetection,5890,3524,144,62,2,FALSE,FALSE,FALSE,2945,EEG,1,"MEG(Magnetoencephalography, 뇌자도, 신경 세포들 사이의 전류 흐름으로 유도된 자기장 측정)",,"down sampled to 250Hz, high-pass filtered at 1Hz"
+FingerMovements,316,100,28,50,2,FALSE,FALSE,FALSE,159,EEG,1,"directionally modulated MEG activity , move joystick",,625Hz
+HandMovementDirection,160,74,10,400,4,FALSE,FALSE,FALSE,40,EEG,1,hand movement direction in MEG,,625Hz
+Handwriting,150,850,3,152,26,TRUE,FALSE,FALSE,8,HAR,1,"motion taken from smart watch, 26letters of alphabet",3D accelerometer and 3D gyroscope,
+Heartbeat,204,205,61,405,2,FALSE,FALSE,FALSE,57,Audio,1,Heart sound to detect normal/abnormal,,each recording truncated to 5sec
+InsectWingbeat,30000,20000,200,30,10,FALSE,FALSE,FALSE,3000,Audio,0,,,
+JapaneseVowels,270,370,12,29,9,FALSE,FALSE,FALSE,30,Audio,0,recorded saying 'a' and 'e',12 degree linear prediction analysis,
+Libras,180,180,2,45,15,FALSE,FALSE,FALSE,12,HAR,0,hand movement recognition for brazilian sign language (video),,
+LSST,2459,2466,6,36,14,FALSE,FALSE,FALSE,34,Other,1,"Large synoptic Survey Telescope, classify astronomical time series data ",,
+MotorImagery,278,100,64,3000,2,FALSE,FALSE,FALSE,139,EEG,1,"perform imagined movements(left  small finger or tongue), electrical brain activity picked",,1000Hz
+NATOPS,180,180,24,51,6,FALSE,FALSE,FALSE,30,HAR,1,six separate actions,"8 sensors (x,y,z)",20FPS(Frame Per Second)
+PEMS-SF,267,173,963,144,7,FALSE,FALSE,FALSE,32,MISC,1,data describe occupancy rate of car lanes,,timestamp inside dataset
+PenDigits,7494,3498,2,8,10,FALSE,FALSE,FALSE,780,Motion,1,"(x,y) coordinate timeseries with constant time difference",Tablet coordinate  which pressed with pen,10Hz
+Phoneme,3315,3353,11,217,39,FALSE,FALSE,FALSE,85,Sound,1,"hierarchical classification of phonetic time series , segmented audio from google translate",,spectrogram of each instance window size of 0.001sec 
+RacketSports,151,152,6,30,4,FALSE,FALSE,FALSE,39,HAR,1,pay badminton or squash wearing smart watch,3D accelerometer and 3D gyroscope,10Hz
+SelfRegulationSCP1,268,293,6,896,2,FALSE,FALSE,FALSE,135,EEG,1,,,
+SelfRegulationSCP2,200,180,7,1152,2,FALSE,FALSE,FALSE,100,EEG,1,,,
+SpokenArabicDigits,6599,2199,13,93,10,FALSE,FALSE,FALSE,660,Speech,0,,,
+StandWalkJump,12,15,4,2500,3,FALSE,FALSE,FALSE,4,ECG,1,ECG signals recorded while doing physical activities,each dimension is frequency band from the spectrogram,500Hz
+UWaveGestureLibrary,120,320,3,315,8,TRUE,FALSE,FALSE,15,HAR,1,8 simple gestures generated from accelerometers ,"x,y,z coordinates of each motion",
+,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+,Type Description,,,,,,,,,,,,,
+,HAR,Human Activity Recognition,,,,,,,,,,,,
+,EEG,Electroencephalogrom(뇌전도),,,,,,,,,,,,
+,ECG,Electrocardiogram(심전도),,,,,,,,,,,,
+,MISC,,,,,,,,,,,,,

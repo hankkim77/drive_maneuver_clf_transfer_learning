@@ -1,0 +1,69 @@
+driving_maneuver_master
+
+Detect and Classify aggressive driving maneuver using GNSS/IMU/CAN Bus data
+
+### HAR_model parameters saved as '.pt' format (pytorch)
+### Pretrain/Transfer learning model parameters saved as '.hdf5' format (keras)
+### Source data saved as '.ts', '.pkl(.pickle)','.csv' format
+
+- 0.Data_processing
+	-  0-0.rule_based_labeling.ipynb
+		make aggressive maneuver label by following rules
+	- 0-1.windowing.ipynb
+		slicing timeseries into window for model-based learning
+	- plot_maneuver.ipynb
+		plot each maenuver to see special pattern/ features
+
+- 1. Candidate_extraction
+	- matlab
+		- candidate_extraction.mat
+			extract LC candidate by domain specific knowledge 
+			DTW distance used for finding lateral offset pattern of lane change
+		- plot_pred.mat
+			plot lateral offset and candidate for validation
+	- candidate_to_df.ipynb
+		add candidate prediction to data as feature
+
+- 2-1.HAR_model
+	utilize HAR(Human-Activity-Recognition) model for maneuver classification
+	reference : (https://github.com/kyeonminsu/deep-learning-HAR-master)
+	- pred_results
+		model prediction(inference) results
+	- saved_model
+		saved_model parameters with '.pt' format
+
+- 2-2. Ensemble_model 
+	ensemble various model to develop model score
+
+- 3. Multivariate-ts_transfer
+	transfer learning using multivariate timeseries dataset
+	- Extra_Dataset
+		additional multivariate timeseries dataset for pretraining
+	- Multivariate_ts
+		30 multivariate UEA Time Series Classification datasets 
+		reference : (http://www.timeseriesclassification.com/index.php)
+	- results
+		pretrained/ transfered model parameters and results (model suggested from reference paper)
+		- fcn
+			pretrained model outputs for multivariate timeseries dataset
+		- maneuver
+			trained model outputs for target dataset alone
+		- transfer
+			transfered model outputs for target dataset
+	- results_LSTM
+		pretrained/ transfered model parameters and results (Replace suggested model's pooling layer to LSTM cell)
+		folder structure same as (results)
+	- signal_shape
+		signal shape sample for each multivariate timeseries dataset/ target dataset
+	- Compare_original_transfer.ipynb
+		Analyze original vs transfer model output
+	- Compare_signal_shape.ipynb
+		compare multivariate timeseries & target dataset signal shape for some analysis
+	- Confusion_matrix.ipynb
+		confusuion matrix with target test data from transfer model
+	- DataDescription.csv
+		Simple summary for Multivariate Timeseries dataset
+	- imbalance_ratio.ipynb
+		Calculate each datasets label imbalance for some analysis
+	- similarity_measures.ipynb
+		Calculate dataset similarity between multivaritate timeseries dataset & target dataset
